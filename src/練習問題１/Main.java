@@ -1,12 +1,13 @@
 package 練習問題１;
 
+import java.util.function.*;
+
 public class Main {
     public static void main(String[] args) {
-        Checker<Integer> suji = x -> x % 2 == 0;
-        Checker<String> moji = x -> x.isBlank();
+        Function<String, String> func1 = String::toUpperCase;
+        Function<String, String> func2 = x -> "***" + x;
 
-        System.out.println(suji.check(4));
-        System.out.println(moji.check("kkk"));
-
+        String str = func1.apply("Masayoshi");
+        System.out.println(func2.apply(str));
     }
 }
